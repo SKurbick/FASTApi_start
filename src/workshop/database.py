@@ -10,6 +10,7 @@ engine = create_engine(
 
 Session = sessionmaker(
     engine,
-    autoflush=False,
-    authocommit=False,
+    # закомитил по своему желанию, так как не открывалась БД в АПИ приложения
+    # autoflush=False,
+    # authocommit=True,
 )

@@ -8,6 +8,7 @@ class Settings(BaseSettings):
     # database_url: str = "postgresql://user:password@postgresserver/db"
     database_url: str = "postgresql://postgres:6336@localhost:5432/fastapi"
 
+
 settings = Settings(
     _env_file='.env',
     _env_file_encoding='utf-8',
