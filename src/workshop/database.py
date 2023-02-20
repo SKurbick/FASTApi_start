@@ -11,6 +11,15 @@ engine = create_engine(
 Session = sessionmaker(
     engine,
     # закомитил по своему желанию, так как не открывалась БД в АПИ приложения
-    # autoflush=False,
+    autoflush=False,
     # authocommit=True,
 )
+
+
+# закрытие сессии
+def get_session() -> Session:
+    session = Session()
+    try:
+        yield session
+    finally:
+        session.close()
